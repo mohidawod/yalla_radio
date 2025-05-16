@@ -4,7 +4,13 @@ workflows:
     environment:
       flutter: stable
     scripts:
+      - echo "=== مسار العمل الحالي: ==="
+      - pwd
+      - echo "=== محتويات المجلد: ==="
+      - ls -la
+      - echo "=== تثبيت الاعتماديات: ==="
       - flutter pub get
-      - flutter build apk --release
+      - echo "=== بناء التطبيق: ==="
+      - flutter build apk --release --verbose
     artifacts:
       - build/app/outputs/flutter-apk/*.apk
